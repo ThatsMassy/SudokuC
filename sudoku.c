@@ -42,7 +42,7 @@ int main()
 	stampa();
 	printf("\n\n");
 	stampa1();
-	//inserimento();
+	inserimento();
 	printf("\n");
 	fag3=1;
 	smat(0,3);
