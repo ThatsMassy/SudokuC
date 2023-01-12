@@ -16,8 +16,8 @@ int co=0, ri=0, sq;
 int appoggia, prendi=0;
 int orsi=0;
 int mettid(int sotto, int sopra);
-int a,b,c,d,v,e,f,t,g,h,i,j,k;
-int r,n=0,m=1,l=2,fag1,fag2,fag3,pluto;
+int a,b,c,d,v,e,f,t,g,h,i,j,k,ff;
+int r,s,n=0,m=1,l=2,fag1,fag2,fag3,pluto;
 void stampa();
 void stampa1();
 void matrici();
@@ -42,20 +42,30 @@ int main()
 	stampa();
 	printf("\n\n");
 	stampa1();
-	inserimento();
-	printf("\n");
-	fag3=1;
-	smat(0,3);
-	printf("\n");
-	smat(3,6);
-	printf("\n");
-	smat(6,9);
-	printf("\n");
-	fag3=2;
-	printf("\n");
-	porcata();
-	printf("\n");
-	smat(0,3);
+	do
+	{
+		inserimento();
+		printf("\n");
+		stampa();
+		printf("\n\n");
+		stampa1();
+		printf("\n\n");
+		fag3=1;
+		smat(0,3);
+		printf("\n");
+		smat(3,6);
+		printf("\n");
+		smat(6,9);
+		printf("\n");
+		fag3=2;
+		printf("\n");
+		porcata();
+		printf("\n");
+		smat(0,3);
+		printf("\n\n0= Fine lavoro 1=Inserisci numero");
+		ff=mettid(0,1);
+	}
+	while(ff!=0);
 	system("PAUSE");
 }
 int mettid(int sotto, int sopra)
@@ -64,7 +74,7 @@ int mettid(int sotto, int sopra)
 	do
 	{
 		printf("(%d - %d): ",sotto,sopra);
-		scanf("&d",&pippo);
+		scanf("%d",&pippo);
 	}
 	while(pippo<sotto || pippo>sopra);
 	return pippo;
@@ -199,15 +209,21 @@ void numeri()
 }
 void inserimento()
 {
-	printf("\n seleziona riga: (1-9) ");
-	scanf("%d",co);
-	system("cls");
-	printf("\n seleziona colonna: (1-9) ");
-	scanf("%d",ri);
-	system("cls");
-	printf("\n seleziona valore: (1-9) ");
-	scanf("%d",v);
-	met[co][ri]=v;
+	printf("\ninserisci riga:");
+	a=mettid(1,9);
+	a=a-1;
+	printf("\ninserisci colonna:");
+	b=mettid(1,9);
+	b=b-1;
+	printf("\ninserisci valore: ");
+	sm1[a][b]=mettid(1,9);
+	y=sm1[a][b]-1;
+	for(k=0;k<9;k++)
+	{
+		mat[a][k][y]=0;
+		mat[k][b][y]=0;
+		mat[a][b][k]=0;
+	}
 }
 void cornice()
 {
