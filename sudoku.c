@@ -81,7 +81,14 @@ void stampa()
 		printf("\n%3d|",x+1);
 		for(z=0;z<9;z++)
 		{
-			printf(" %3d|",sm1[x][z]);
+			if (sm1[x][z]==1)
+			{
+				printf(" %3d|",sm1[x][z]);
+			}
+			else
+			{
+				printf("    |");
+			}
 		}
 	}
 	tratto();
@@ -99,7 +106,12 @@ void stampa1()
 		printf("\n%d|",x+1);
 		for(z=0;z<9;z++)
 		{
-			printf("%9u|",sol[x][z]);
+			if(sol[x][z]>0)
+			{
+				printf("%9u|",sol[x][z]);
+			}
+			else
+			printf("         |");
 		}
 	}
 	tratto2();
