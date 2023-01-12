@@ -10,12 +10,13 @@ int mat[9][9][9];
 int sm1[9][9];
 long sol[9][9],fattore;
 int tt[9][9][3];
+int met[9][9];
 int x,y,z,w;
 int co=0, ri=0, sq;
 int appoggia, prendi=0;
 int orsi=0;
 int mettid(int sotto, int sopra);
-int a,b,c,d,e,f,t,g,h,i,j,k;
+int a,b,c,d,v,e,f,t,g,h,i,j,k;
 int r,n=0,m=1,l=2,fag1,fag2,fag3,pluto;
 void stampa();
 void stampa1();
@@ -41,7 +42,7 @@ int main()
 	stampa();
 	printf("\n\n");
 	stampa1();
-	inserimento();
+	//inserimento();
 	printf("\n");
 	fag3=1;
 	smat(0,3);
@@ -201,13 +202,12 @@ void inserimento()
 	printf("\n seleziona riga: (1-9) ");
 	scanf("%d",co);
 	system("cls");
-	stampa();
-	stampa1();
 	printf("\n seleziona colonna: (1-9) ");
 	scanf("%d",ri);
 	system("cls");
-	stampa();
-	stampa1();
+	printf("\n seleziona valore: (1-9) ");
+	scanf("%d",v);
+	met[co][ri]=v;
 }
 void cornice()
 {
