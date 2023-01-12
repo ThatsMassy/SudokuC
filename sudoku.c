@@ -34,7 +34,6 @@ void inserimento();
 void ipertratto();
 int main()
 {
-	
 	system("COLOR F0");
 	numeri();
 	printf("\n\n");
@@ -42,7 +41,7 @@ int main()
 	stampa();
 	printf("\n\n");
 	stampa1();
-	//inserimento();
+	inserimento();
 	printf("\n");
 	fag3=1;
 	smat(0,3);
@@ -199,10 +198,16 @@ void numeri()
 }
 void inserimento()
 {
-	printf("\n riga: (1-9) ");
+	printf("\n seleziona riga: (1-9) ");
 	scanf("%d",co);
-	printf("\n colonna: (1-9) ");
+	system("cls");
+	stampa();
+	stampa1();
+	printf("\n seleziona colonna: (1-9) ");
 	scanf("%d",ri);
+	system("cls");
+	stampa();
+	stampa1();
 }
 void cornice()
 {
@@ -245,16 +250,11 @@ void componi()
     	{
 			sol[x][y] = 0;
     		fattore=100000000;
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][0] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][1] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][2] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][3] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][4] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][5] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][6] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][7] * fattore);
-			sol[x][y] = (long) sol[x][y] + (mat[x][y][8] * fattore);
-			fattore = fattore / 10;
+			for(z=0;z<9;z++)
+			{
+				sol[x][y]=(long)sol[x][y]+(mat[x][y][z]*fattore);
+				fattore=fattore/10;
+			}
 		}
     }
 }
