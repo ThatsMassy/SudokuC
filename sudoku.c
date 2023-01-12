@@ -16,21 +16,19 @@ int appoggia, prendi=0;
 int orsi=0;
 int mettid(int sotto, int sopra);
 int a,b,c,d,e,f,g,h,i,j,k;
-int r,n=0,m=1,l=2,fag1,fag2;
+int r,n=0,m=1,l=2,fag1,fag2,fag3,pluto;
 void stampa();
 void stampa1();
 void matrici();
 void smat(int dal,int al);
 void numeri();
 void tratto();
-void paguri();
 void tratto1();
 void tratto2();
 void trattone();
 void porcata();
 void cornice();
-void interno(int passa);
-void interno1(int passa);
+void se0(int passa);
 void inserimento();
 void ipertratto();
 int main()
@@ -43,15 +41,18 @@ int main()
 	stampa1();
 	//inserimento();
 	printf("\n");
-	matrici();
-	printf("\n");
+	fag3=1;
 	smat(0,3);
 	printf("\n");
 	smat(3,6);
 	printf("\n");
 	smat(6,9);
 	printf("\n");
-	paguri();
+	fag3=2;
+	printf("\n");
+	porcata();
+	printf("\n");
+	smat(0,3);
 	system("PAUSE");
 }
 int mettid(int sotto, int sopra)
@@ -127,11 +128,6 @@ void tratto2()
 		printf("---------+");
 	}
 }
-void matrici()
-{
-	printf("\n  Matrici\n\n");
-	printf("    1		  	  2			3");	//da sistemare con ciclo for
-}
 void trattone()
 {
 	printf("+--+");
@@ -142,39 +138,30 @@ void trattone()
 }
 void smat(int fag1,int fag2)
 {
+	printf("\n");
 	cornice();
 	for(r=0;r<9;r++)
 	{
 		for(n=fag1;n<fag2;n++)
 		{
 			printf("%3d|",r+1);
-			interno(n);
-		}
-		printf("\n");
-		ipertratto();
-	}
-	printf("\n");		
-}
-void paguri()
-{
-	printf("\n");
-	porcata();
-	printf("\n");
-	cornice();
-	for(r=0;r<9;r++)
-	{
-		for(n=0;n<3;n++)
-		{
-			printf("%3d|",r+1);
 			for(c=0;c<9;c++)
 			{
-				interno1(n);
+				if (fag3==1)
+				{
+					pluto = mat[r][c][n];
+				}
+				else
+				{
+					pluto = tt[r][c][n];
+				}				
+				se0(pluto);
 			}
 		}
 		printf("\n");
 		ipertratto();
 	}
-	printf("\n");
+	printf("\n");		
 }
 void porcata()
 {
@@ -184,9 +171,9 @@ void numeri()
 {
 	for(r=0;r<9;r++)
 	{
-		for(n=0;n<9;n++)
+		for(c=0;c<9;c++)
 		{
-			for(c=0;c<9;c++)
+			for(n=0;n<9;n++)
 			{
 				mat[r][c][n]=n+1;
 			}
@@ -214,32 +201,16 @@ void cornice()
 	printf("\n");
 	ipertratto();
 }
-void interno(int passa)
+void se0(int passa)
 {
-	int pippo;
-	pippo = mat[r][c][passa];
-	for(c=0;c<9;c++)
-	{
-		if(pippo == mat[r][c][passa])
+	if(passa == 0)
 		{
 			printf(" |");
 		}
 		else
-		printf("%d|",mat[r][c][passa]);
-	}
-}
-void interno1(int passa)
-{
-	int pippo;
-	pippo = tt[r][c][passa];
-	for(c=0;c<9;c++)
-	{
-		if(pippo == tt[r][c][passa])
 		{
-			printf(" |",tt[r][c][passa]);
+			printf("%d|",passa);			
 		}
-		printf("%d|",tt[r][c][passa]);
-	}
 }
 void ipertratto()
 {
