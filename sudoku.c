@@ -81,7 +81,7 @@ void stampa()
 		printf("\n%3d|",x+1);
 		for(z=0;z<9;z++)
 		{
-			if (sm1[x][z]==1)
+			if (sm1[x][z]>0)
 			{
 				printf(" %3d|",sm1[x][z]);
 			}
