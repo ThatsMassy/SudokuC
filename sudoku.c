@@ -22,10 +22,10 @@ void stampa1();
 void matrici();
 void smat(int dal,int al);
 void numeri();
-void numeri2();
+void tratto2();
 void tratto();
 void tratto1();
-void tratto2();
+void componi();
 void trattone();
 void porcata();
 void cornice();
@@ -38,7 +38,7 @@ int main()
 	system("COLOR F0");
 	numeri();
 	printf("\n\n");
-	numeri2();
+	componi();
 	stampa();
 	printf("\n\n");
 	stampa1();
@@ -236,15 +236,15 @@ void ipertratto()
 	trattone();
 	printf("\n");
 }
-void numeri2()
+void componi()
 {
 	long fattore;
 	for(x=0;x<9;x++)
-	{
+    {
 		for(y=0;y<9;y++)
-		{
+    	{
 			sol[x][y] = 0;
-			fattore = 100000000;
+    		fattore=100000000;
 			sol[x][y] = (long) sol[x][y] + (mat[x][y][0] * fattore);
 			sol[x][y] = (long) sol[x][y] + (mat[x][y][1] * fattore);
 			sol[x][y] = (long) sol[x][y] + (mat[x][y][2] * fattore);
@@ -254,7 +254,7 @@ void numeri2()
 			sol[x][y] = (long) sol[x][y] + (mat[x][y][6] * fattore);
 			sol[x][y] = (long) sol[x][y] + (mat[x][y][7] * fattore);
 			sol[x][y] = (long) sol[x][y] + (mat[x][y][8] * fattore);
-			fattore=fattore/10;
+			fattore = fattore / 10;
 		}
-	}
+    }
 }
