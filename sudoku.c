@@ -16,7 +16,7 @@ int co=0, ri=0, sq;
 int appoggia, prendi=0;
 int orsi=0;
 int mettid(int sotto, int sopra);
-int a,b,c,d,v,e,f,t,g,h,i,j,k,ff;
+int a,b,c,d,v,e,rr,cc,f,t,g,h,i,j,k,ff,dr,ar,dc,ac;
 int r,s,n=0,m=1,l=2,fag1,fag2,fag3,pluto;
 void stampa();
 void stampa1();
@@ -32,6 +32,7 @@ void porcata();
 void cornice();
 void se0(int passa);
 void inserimento();
+void calcolo();
 void ipertratto();
 int main()
 {
@@ -224,6 +225,45 @@ void inserimento()
 		mat[k][b][y]=0;
 		mat[a][b][k]=0;
 	}
+	if(a == 0 || a == 1 || a == 2)
+	{
+		dr=0;
+		ar=3;	
+	}
+	if(a == 3 || a == 4 || a == 5)
+	{
+		dr=3;
+		ar=6;	
+	}
+	if(a == 6 || a == 7 || a == 8)
+	{
+		dr=6;
+		ar=9;	
+	}
+	if(b == 0 || b == 1 || b == 2)
+	{
+		dc=0;
+		ac=3;	
+	}
+	if(b == 3 || b == 4 || b == 5)
+	{
+		dc=3;
+		ac=6;	
+	}
+	if(b == 6 || b == 7 || b == 8)
+	{
+		dc=6;
+		ac=9;	
+	}
+	for(x=dr;x<ar;x++)
+	{
+		for(cc=dc;cc<ac;cc++)
+		{
+			mat[x][cc][y]=0;
+		}
+	}
+	tt[b][y][0]=y;
+	tt[y][b][1]=y;
 }
 void cornice()
 {
@@ -273,4 +313,13 @@ void componi()
 			}
 		}
     }
+}
+void calcolo()
+{
+	for(x=0;x<9;x++)
+	{
+		
+		
+	}
+	
 }
