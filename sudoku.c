@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <Windows.h>
-void selector(unsigned short color)
+void selctor(unsigned short color)
 {
-	HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hCon,color);
+    HANDLER hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttributr(hCon,color);
 }
 int mat[9][9][9];
 int sm1[9][9];
@@ -30,13 +30,13 @@ void componi();
 void trattone();
 void porcata();
 void cornice();
+void squadrato();
 void se0(int passa);
 void inserimento();
 void calcolo();
 void ipertratto();
 int main()
 {
-	system("COLOR F0");
 	numeri();
 	printf("\n\n");
 	componi();
@@ -62,9 +62,11 @@ int main()
 		printf("\n");
 		porcata();
 		printf("\n");
+		squadrato();
 		smat(0,3);
 		printf("\n\n0= Fine lavoro 1=Inserisci numero");
 		ff=mettid(0,1);
+		
 	}
 	while(ff!=0);
 	system("PAUSE");
@@ -82,7 +84,7 @@ int mettid(int sotto, int sopra)
 }
 void stampa()
 {
-	system("CLS");
+	system("clear");
 	printf("\n PROGRAMMA SUDOKU\n\n");
 	printf("   |");
 	for(x=0;x<9;x++)
@@ -122,7 +124,7 @@ void stampa1()
 		{
 			if(sol[x][z]>0)
 			{
-				printf("%9u|",sol[x][z]);
+				printf("%9ld|",sol[x][z]);
 			}
 			else
 			{
@@ -314,12 +316,44 @@ void componi()
 		}
     }
 }
-void calcolo()
+void squadrato()
 {
-	for(x=0;x<9;x++)
+	tt[b][y][0]=y+1;
+	tt[y][b][1]=y+1;
+	if(y==1)
 	{
-		
-		
+		tt[dr][dc][2]=y+1;
 	}
-	
+	if(y==2)
+	{
+		tt[dr][dc+1][2]=y+1;
+	}
+	if(y==3)
+	{
+		tt[dr][dc+2][2]=y+1;
+	}
+	if(y==4)
+	{
+		tt[dr+1][dc][2]=y+1;
+	}
+	if(y==5)
+	{
+		tt[dr+1][dc+1][2]=y+1;
+	}
+	if(y==6)
+	{
+		tt[dr+1][dc+2][2]=y+1;
+	}
+	if(y==7)
+	{
+		tt[dr+2][dc][2]=y+1;
+	}
+	if(y==8)
+	{
+		tt[dr+2][dc+1][2]=y+1;
+	}
+	if(y==9)
+	{
+		tt[dr+2][dc+2][2]=y+1;
+	}
 }
