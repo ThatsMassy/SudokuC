@@ -3,8 +3,8 @@
 #include <Windows.h>
 void selctor(unsigned short color)
 {
-    HANDLER hCon = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttributr(hCon,color);
+    HANDLE hCon = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hCon,color);
 }
 int mat[9][9][9];
 int sm1[9][9];
@@ -84,7 +84,7 @@ int mettid(int sotto, int sopra)
 }
 void stampa()
 {
-	system("clear");
+	system("cls");
 	printf("\n PROGRAMMA SUDOKU\n\n");
 	printf("   |");
 	for(x=0;x<9;x++)
